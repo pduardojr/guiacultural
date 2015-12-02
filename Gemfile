@@ -67,14 +67,12 @@ source 'https://rubygems.org'
     end
 
     group :production do
-      gem 'pg'
       gem 'rails_12factor'
     end
 
     group :development do
       gem 'better_errors'
       gem 'html2haml'
-      gem 'quiet_assets'
       gem 'rails_layout'
       gem 'rails_apps_pages'
       gem "rails_apps_testing"
