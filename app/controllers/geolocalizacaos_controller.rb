@@ -69,6 +69,6 @@ class GeolocalizacaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def geolocalizacao_params
-      params.require(:geolocalizacao).permit(:latitude, :longitude, :user_id)
+      params.require(:geolocalizacao).permit(:latitude, :longitude, :users_id)
     end
 end

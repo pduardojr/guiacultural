@@ -69,6 +69,6 @@ class DescontosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def desconto_params
-      params.require(:desconto).permit(:porcentagem, :user_id)
+      params.require(:desconto).permit(:porcentagem, :users_id)
     end
 end

@@ -1,3 +1,3 @@
 class Geolocalizacao < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :users
 end

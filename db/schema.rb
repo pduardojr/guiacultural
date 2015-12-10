@@ -11,34 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210150440) do
+ActiveRecord::Schema.define(version: 20151210180848) do
 
   create_table "descontos", force: :cascade do |t|
     t.float    "porcentagem"
-    t.integer  "user_id"
+    t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "descontos", ["user_id"], name: "index_descontos_on_user_id"
+  add_index "descontos", ["users_id"], name: "index_descontos_on_users_id"
 
   create_table "geolocalizacaos", force: :cascade do |t|
-    t.string   "latitude"
-    t.string   "longitude"
-    t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "geolocalizacaos", ["user_id"], name: "index_geolocalizacaos_on_user_id"
+  add_index "geolocalizacaos", ["users_id"], name: "index_geolocalizacaos_on_users_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "nome"
     t.string   "email"
-    t.date     "datanasc"
+    t.date     "data_nasc"
     t.string   "senha"
+    t.integer  "evento_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["evento_id"], name: "index_users_on_evento_id"
 
 end
