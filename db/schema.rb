@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207232728) do
+ActiveRecord::Schema.define(version: 20151210150440) do
+
+  create_table "descontos", force: :cascade do |t|
+    t.float    "porcentagem"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "descontos", ["user_id"], name: "index_descontos_on_user_id"
+
+  create_table "geolocalizacaos", force: :cascade do |t|
+    t.string   "latitude"
+    t.string   "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "geolocalizacaos", ["user_id"], name: "index_geolocalizacaos_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

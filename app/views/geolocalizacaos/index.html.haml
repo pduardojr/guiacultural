@@ -1,0 +1,25 @@
+%h1 Listing geolocalizacaos
+
+%table
+  %thead
+    %tr
+      %th Latitude
+      %th Longitude
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @geolocalizacaos.each do |geolocalizacao|
+      %tr
+        %td= geolocalizacao.latitude
+        %td= geolocalizacao.longitude
+        %td= geolocalizacao.user
+        %td= link_to 'Show', geolocalizacao
+        %td= link_to 'Edit', edit_geolocalizacao_path(geolocalizacao)
+        %td= link_to 'Destroy', geolocalizacao, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Geolocalizacao', new_geolocalizacao_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Porcentagem:
+  = @desconto.porcentagem
+%p
+  %b User:
+  = @desconto.user
+
+= link_to 'Edit', edit_desconto_path(@desconto)
+\|
+= link_to 'Back', descontos_path

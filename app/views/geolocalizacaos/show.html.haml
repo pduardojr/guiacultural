@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Latitude:
+  = @geolocalizacao.latitude
+%p
+  %b Longitude:
+  = @geolocalizacao.longitude
+%p
+  %b User:
+  = @geolocalizacao.user
+
+= link_to 'Edit', edit_geolocalizacao_path(@geolocalizacao)
+\|
+= link_to 'Back', geolocalizacaos_path
