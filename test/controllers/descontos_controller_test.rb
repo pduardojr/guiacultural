@@ -18,7 +18,7 @@ class DescontosControllerTest < ActionController::TestCase
 
   test "should create desconto" do
     assert_difference('Desconto.count') do
-      post :create, desconto: { porcentagem: @desconto.porcentagem, users_id: @desconto.users_id }
+      post :create, desconto: { porcentagem: @desconto.porcentagem, user_id: @desconto.user_id }
     end
 
     assert_redirected_to desconto_path(assigns(:desconto))
@@ -35,7 +35,7 @@ class DescontosControllerTest < ActionController::TestCase
   end
 
   test "should update desconto" do
-    patch :update, id: @desconto, desconto: { porcentagem: @desconto.porcentagem, users_id: @desconto.users_id }
+    patch :update, id: @desconto, desconto: { porcentagem: @desconto.porcentagem, user_id: @desconto.user_id }
     assert_redirected_to desconto_path(assigns(:desconto))
   end
 
