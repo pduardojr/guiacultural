@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Porcentagem:</strong>
+  <%= @desconto.porcentagem %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @desconto.user %>
+</p>
+
+<%= link_to 'Edit', edit_desconto_path(@desconto) %> |
+<%= link_to 'Back', descontos_path %>

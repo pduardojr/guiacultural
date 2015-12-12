@@ -1,0 +1,1017 @@
+  [1m[36m (125.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (132.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:06:13 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (26.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (124.2ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (84.6ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (3.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.2ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (147.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151210180745)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "data_nasc" date, "senha" varchar, "evento_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_users_on_evento_id" ON "users" ("evento_id")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210180745"]]
+  [1m[36m (127.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateDescontos (20151210180818)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "descontos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "porcentagem" float, "users_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_descontos_on_users_id" ON "descontos" ("users_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151210180818"]]
+  [1m[35m (126.9ms)[0m  commit transaction
+Migrating to CreateGeolocalizacaos (20151210180848)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "geolocalizacaos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" float, "longitude" float, "users_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_geolocalizacaos_on_users_id" ON "geolocalizacaos" ("users_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210180848"]]
+  [1m[36m (126.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:09:15 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 3323ms (Views: 3237.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/descontos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/scaffolds.self-ee25ba116702a67dfa6b658bc55bf6abbc0ea71d72dafbc277829b959de77d38.css?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/descontos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:09:19 -0200
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-12-10 16:09:22 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (69.4ms)
+  Rendered users/new.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 213ms (Views: 200.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:09:31 -0200
+Processing by DescontosController#index as HTML
+  [1m[36mDesconto Load (0.5ms)[0m  [1mSELECT "descontos".* FROM "descontos"[0m
+  Rendered descontos/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 187ms (Views: 177.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:09:32 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.3ms)[0m  SELECT "descontos".* FROM "descontos"
+  Rendered descontos/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 187ms (Views: 185.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/geolocalizacaos" for 127.0.0.1 at 2015-12-10 16:09:43 -0200
+Processing by GeolocalizacaosController#index as HTML
+  [1m[36mGeolocalizacao Load (0.4ms)[0m  [1mSELECT "geolocalizacaos".* FROM "geolocalizacaos"[0m
+  Rendered geolocalizacaos/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 178ms (Views: 171.3ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEventos (20151210181513)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "eventos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "endereco" varchar, "preco" float, "class_etaria" float, "descricao" varchar, "coordenada" float, "estabelecimentos_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_eventos_on_estabelecimentos_id" ON "eventos" ("estabelecimentos_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210181513"]]
+  [1m[36m (182.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEstabelecimentos (20151210181557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "estabelecimentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cnpj" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210181557"]]
+  [1m[36m (129.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_eventos_on_estabelecimentos_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_eventos_on_estabelecimentos_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+
+
+
+Started GET "/geolocalizacaos" for 127.0.0.1 at 2015-12-10 16:16:25 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GeolocalizacaosController#index as HTML
+  [1m[35mGeolocalizacao Load (0.3ms)[0m  SELECT "geolocalizacaos".* FROM "geolocalizacaos"
+  Rendered geolocalizacaos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 972ms (Views: 924.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/descontos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/estabelecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/scaffolds.self-ee25ba116702a67dfa6b658bc55bf6abbc0ea71d72dafbc277829b959de77d38.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/eventos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/estabelecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/descontos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/eventos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-10 16:16:27 -0200
+
+
+Started GET "/eventos" for 127.0.0.1 at 2015-12-10 16:16:35 -0200
+Processing by EventosController#index as HTML
+  [1m[36mEvento Load (1.0ms)[0m  [1mSELECT "eventos".* FROM "eventos"[0m
+  Rendered eventos/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 199ms (Views: 187.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/ewtabelecimentos" for 127.0.0.1 at 2015-12-10 16:16:43 -0200
+
+ActionController::RoutingError (No route matches [GET] "/ewtabelecimentos"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (164.5ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.8ms)
+
+
+Started GET "/estabelecimentos" for 127.0.0.1 at 2015-12-10 16:16:48 -0200
+Processing by EstabelecimentosController#index as HTML
+  [1m[35mEstabelecimento Load (0.3ms)[0m  SELECT "estabelecimentos".* FROM "estabelecimentos"
+  Rendered estabelecimentos/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 195ms (Views: 185.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/estabelecimentos/new" for 127.0.0.1 at 2015-12-10 16:16:59 -0200
+Processing by EstabelecimentosController#new as HTML
+  Rendered estabelecimentos/_form.html.erb (36.5ms)
+  Rendered estabelecimentos/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 275ms (Views: 261.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/estabelecimentos" for 127.0.0.1 at 2015-12-10 16:17:05 -0200
+Processing by EstabelecimentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pk8I955fFdkFdx+YSmpz3ORqrLoB7Exw4bV+GKqE0a5pb6dD/djZDAcxYiTC0z2yIeRAuc0itpSSLpk5jM+zRw==", "estabelecimento"=>{"nome"=>"xxx", "cnpj"=>""}, "commit"=>"Create Estabelecimento"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "estabelecimentos" ("nome", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["nome", "xxx"], ["cnpj", ""], ["created_at", "2015-12-10 18:17:05.740530"], ["updated_at", "2015-12-10 18:17:05.740530"]]
+  [1m[36m (264.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/estabelecimentos/1
+Completed 302 Found in 280ms (ActiveRecord: 265.2ms)
+
+
+Started GET "/estabelecimentos/1" for 127.0.0.1 at 2015-12-10 16:17:06 -0200
+Processing by EstabelecimentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstabelecimento Load (0.5ms)[0m  SELECT  "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered estabelecimentos/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 260ms (Views: 182.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/eventos" for 127.0.0.1 at 2015-12-10 16:17:11 -0200
+Processing by EventosController#index as HTML
+  [1m[36mEvento Load (0.7ms)[0m  [1mSELECT "eventos".* FROM "eventos"[0m
+  Rendered eventos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 193ms (Views: 190.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/eventos/new" for 127.0.0.1 at 2015-12-10 16:17:13 -0200
+Processing by EventosController#new as HTML
+  Rendered eventos/_form.html.erb (17.4ms)
+  Rendered eventos/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 214ms (Views: 201.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:18:29 -0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 145ms (Views: 139.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-12-10 16:18:32 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.4ms)
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 182ms (Views: 171.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-12-10 16:18:36 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V24x+HlDmT7Q0JkEdNjHhhgjZ4uattbzuMbv4Oxi3oUATp5MGsRV69KW5Lj8YYno3a2LiFZ4LBfLXQjByim8bA==", "user"=>{"nome"=>"abc", "email"=>"", "data_nasc(1i)"=>"2015", "data_nasc(2i)"=>"12", "data_nasc(3i)"=>"10", "senha"=>"", "evento_id"=>""}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("nome", "email", "senha", "data_nasc", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome", "abc"], ["email", ""], ["senha", ""], ["data_nasc", "2015-12-10"], ["created_at", "2015-12-10 18:18:36.486977"], ["updated_at", "2015-12-10 18:18:36.486977"]]
+  [1m[36m (246.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 267ms (ActiveRecord: 248.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-12-10 16:18:36 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 224ms (Views: 220.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:18:41 -0200
+Processing by DescontosController#index as HTML
+  [1m[36mDesconto Load (0.3ms)[0m  [1mSELECT "descontos".* FROM "descontos"[0m
+  Rendered descontos/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 162ms (Views: 154.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:18:44 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (7.5ms)
+  Rendered descontos/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 193ms (Views: 181.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:18:44 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (3.4ms)
+  Rendered descontos/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 200ms (Views: 198.8ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEventos (20151210182225)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "eventos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "endereco" varchar, "preco" float, "class_etaria" float, "descricao" varchar, "coordenada" float, "estabelecimento_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_eventos_on_estabelecimento_id" ON "eventos" ("estabelecimento_id")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210182225"]]
+  [1m[36m (129.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_descontos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_eventos_on_estabelecimento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_eventos_on_estabelecimento_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+
+
+
+Started GET "/eventos" for 127.0.0.1 at 2015-12-10 16:22:53 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventosController#index as HTML
+  [1m[35mEvento Load (0.4ms)[0m  SELECT "eventos".* FROM "eventos"
+  Rendered eventos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 598ms (Views: 553.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/eventos/new" for 127.0.0.1 at 2015-12-10 16:22:57 -0200
+Processing by EventosController#new as HTML
+  Rendered eventos/_form.html.erb (34.0ms)
+  Rendered eventos/new.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 265ms (Views: 251.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/estabelecimento" for 127.0.0.1 at 2015-12-10 16:23:06 -0200
+
+ActionController::RoutingError (No route matches [GET] "/estabelecimento"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (133.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:23:18 -0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 304ms (Views: 297.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/estabelecimentos" for 127.0.0.1 at 2015-12-10 16:23:23 -0200
+Processing by EstabelecimentosController#index as HTML
+  [1m[35mEstabelecimento Load (0.4ms)[0m  SELECT "estabelecimentos".* FROM "estabelecimentos"
+  Rendered estabelecimentos/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 231ms (Views: 223.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/estabelecimentos/new" for 127.0.0.1 at 2015-12-10 16:26:03 -0200
+Processing by EstabelecimentosController#new as HTML
+  Rendered estabelecimentos/_form.html.erb (5.6ms)
+  Rendered estabelecimentos/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 143ms (Views: 141.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-12-10 16:26:09 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (10.4ms)
+  Rendered users/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 147ms (Views: 145.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2015-12-10 16:28:08 -0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dAxmKFEERDhVJBfCuPYdA8G04VFXphyfYfBwsyVjH2kjLMmcMoOI7Vdian4wT1NtBDoNUpto5nsSa5eSAyh9gA==", "id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (124.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 164ms (ActiveRecord: 126.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:28:08 -0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 187ms (Views: 185.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/eventos" for 127.0.0.1 at 2015-12-10 16:28:20 -0200
+Processing by EventosController#index as HTML
+  [1m[35mEvento Load (0.4ms)[0m  SELECT "eventos".* FROM "eventos"
+  Rendered eventos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 184ms (Views: 179.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/eventos/new" for 127.0.0.1 at 2015-12-10 16:28:23 -0200
+Processing by EventosController#new as HTML
+  Rendered eventos/_form.html.erb (10.2ms)
+  Rendered eventos/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 148ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estabelecimentos" for 127.0.0.1 at 2015-12-10 16:28:33 -0200
+Processing by EstabelecimentosController#index as HTML
+  [1m[36mEstabelecimento Load (3.4ms)[0m  [1mSELECT "estabelecimentos".* FROM "estabelecimentos"[0m
+  Rendered estabelecimentos/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 228ms (Views: 223.1ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/estabelecimentos/1" for 127.0.0.1 at 2015-12-10 16:28:39 -0200
+Processing by EstabelecimentosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SRsJPNlhfnYzh9U23N/R4ZLdv5IDsSxzQ1SzWwG1ZLkeO6aIuuayozHBqIpUZp+PV1NTkc9/1pcwz1R6J/4GUA==", "id"=>"1"}
+  [1m[35mEstabelecimento Load (0.5ms)[0m  SELECT  "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "estabelecimentos" WHERE "estabelecimentos"."id" = ?  [["id", 1]]
+  [1m[36m (137.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/estabelecimentos
+Completed 302 Found in 147ms (ActiveRecord: 138.4ms)
+
+
+Started GET "/estabelecimentos" for 127.0.0.1 at 2015-12-10 16:28:39 -0200
+Processing by EstabelecimentosController#index as HTML
+  [1m[35mEstabelecimento Load (0.6ms)[0m  SELECT "estabelecimentos".* FROM "estabelecimentos"
+  Rendered estabelecimentos/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 194ms (Views: 192.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:31:31 -0200
+Processing by DescontosController#index as HTML
+  [1m[36mDesconto Load (0.4ms)[0m  [1mSELECT "descontos".* FROM "descontos"[0m
+  Rendered descontos/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 202ms (Views: 189.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:31:33 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (7.2ms)
+  Rendered descontos/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 217ms (Views: 208.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:31:43 -0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 166ms (Views: 162.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-12-10 16:31:47 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (12.2ms)
+  Rendered users/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 204ms (Views: 202.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-12-10 16:31:52 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+XL903jW1lx3/PGtYSuZDfUJIoOPD4kf4oSsFvWoqjOuUlJnG1EaiXW6jBHpktdjMIfOgEPBc/uRH0s30+PI2g==", "user"=>{"nome"=>"zzz", "email"=>"", "data_nasc(1i)"=>"2015", "data_nasc(2i)"=>"12", "data_nasc(3i)"=>"10", "senha"=>"", "evento_id"=>""}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "users" ("nome", "email", "senha", "data_nasc", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome", "zzz"], ["email", ""], ["senha", ""], ["data_nasc", "2015-12-10"], ["created_at", "2015-12-10 18:31:52.268507"], ["updated_at", "2015-12-10 18:31:52.268507"]]
+  [1m[36m (234.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 247ms (ActiveRecord: 237.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-12-10 16:31:52 -0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 208ms (Views: 205.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-12-10 16:31:57 -0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 165ms (Views: 163.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:32:00 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.4ms)[0m  SELECT "descontos".* FROM "descontos"
+  Rendered descontos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 198ms (Views: 195.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:32:03 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (4.9ms)
+  Rendered descontos/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 123ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/descontos" for 127.0.0.1 at 2015-12-10 16:32:10 -0200
+Processing by DescontosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uwH/PeLc+pweg6qaRmZKFePfJa6PThDc9qtRB/H5lyfsIVCJgVs2SRzF1ybO3wR7JlHJrUOA6jiFMLYm17L1zg==", "desconto"=>{"porcentagem"=>"", "users_id"=>"sdlomsd"}, "commit"=>"Create Desconto"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "descontos" ("users_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["users_id", 0], ["created_at", "2015-12-10 18:32:10.584802"], ["updated_at", "2015-12-10 18:32:10.584802"]]
+  [1m[36m (139.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/descontos/1
+Completed 302 Found in 147ms (ActiveRecord: 140.0ms)
+
+
+Started GET "/descontos/1" for 127.0.0.1 at 2015-12-10 16:32:10 -0200
+Processing by DescontosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDesconto Load (0.4ms)[0m  SELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered descontos/show.html.erb within layouts/application (19.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (uninitialized constant Desconto::Users):
+     7: 
+     8: <p>
+     9:   <strong>Users:</strong>
+    10:   <%= @desconto.users %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_desconto_path(@desconto) %> |
+  app/views/descontos/show.html.erb:10:in `_app_views_descontos_show_html_erb__3668489600958621919_69987753143920'
+
+
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.7ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (34.2ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (71.0ms)
+
+
+Started POST "/descontos" for 127.0.0.1 at 2015-12-10 16:32:17 -0200
+Processing by DescontosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d/M8io/9eWq6pU2RTitojppmiuqQUjcWaUwQlHxmMq8g05M+7Hq1v7jjMC3GkibgX+hm6VyczfIa1/e1Wi1QRg==", "desconto"=>{"porcentagem"=>"", "users_id"=>"zzz"}, "commit"=>"Create Desconto"}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "descontos" ("users_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["users_id", 0], ["created_at", "2015-12-10 18:32:17.088883"], ["updated_at", "2015-12-10 18:32:17.088883"]]
+  [1m[36m (223.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/descontos/2
+Completed 302 Found in 233ms (ActiveRecord: 224.6ms)
+
+
+Started GET "/descontos/2" for 127.0.0.1 at 2015-12-10 16:32:17 -0200
+Processing by DescontosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDesconto Load (0.3ms)[0m  SELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered descontos/show.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (uninitialized constant Desconto::Users):
+     7: 
+     8: <p>
+     9:   <strong>Users:</strong>
+    10:   <%= @desconto.users %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_desconto_path(@desconto) %> |
+  app/views/descontos/show.html.erb:10:in `_app_views_descontos_show_html_erb__3668489600958621919_69987753143920'
+
+
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.2ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.5ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/pauloeduardo/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDescontos (20151210183334)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "descontos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "porcentagem" float, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_descontos_on_user_id" ON "descontos" ("user_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151210183334"]]
+  [1m[36m (137.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_descontos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_descontos_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_eventos_on_estabelecimento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_eventos_on_estabelecimento_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_geolocalizacaos_on_users_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_evento_id' AND type='index'
+
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:33:51 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (27.7ms)
+  Rendered descontos/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 565ms (Views: 507.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/estabelecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/descontos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/eventos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/scaffolds.self-ee25ba116702a67dfa6b658bc55bf6abbc0ea71d72dafbc277829b959de77d38.css?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/descontos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/estabelecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/eventos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-10 16:33:53 -0200
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:33:57 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.5ms)[0m  SELECT "descontos".* FROM "descontos"
+  Rendered descontos/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 259ms (Views: 256.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:33:59 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (7.9ms)
+  Rendered descontos/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 245ms (Views: 243.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/descontos" for 127.0.0.1 at 2015-12-10 16:34:01 -0200
+Processing by DescontosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"scYDMt6UVKYrTacDgZhgNrLI45fSWajoKJoYhgMsO2/m5qyGvROYcykL2r8JIS5Yd0YPlB6XUgxbAf+nJWdZhg==", "desconto"=>{"porcentagem"=>"", "user_id"=>"zzz"}, "commit"=>"Create Desconto"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "descontos" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)  [["user_id", 0], ["created_at", "2015-12-10 18:34:01.590498"], ["updated_at", "2015-12-10 18:34:01.590498"]]
+  [1m[36m (140.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/descontos/1
+Completed 302 Found in 159ms (ActiveRecord: 141.9ms)
+
+
+Started GET "/descontos/1" for 127.0.0.1 at 2015-12-10 16:34:01 -0200
+Processing by DescontosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDesconto Load (0.6ms)[0m  SELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered descontos/show.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 297ms (Views: 270.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:34:05 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.3ms)[0m  SELECT "descontos".* FROM "descontos"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered descontos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 182ms (Views: 180.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/descontos/new" for 127.0.0.1 at 2015-12-10 16:34:06 -0200
+Processing by DescontosController#new as HTML
+  Rendered descontos/_form.html.erb (3.3ms)
+  Rendered descontos/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 197ms (Views: 196.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/descontos" for 127.0.0.1 at 2015-12-10 16:34:08 -0200
+Processing by DescontosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3j1wIhq0FBbp+b2Y+s2Y1OgfDHwiXfrquExHGz0JqgSJHd+WeTPYw+u/wCRydNa6LZHgf+6TAA7L16A6G0LI7Q==", "desconto"=>{"porcentagem"=>"", "user_id"=>"dfomdfpomdf"}, "commit"=>"Create Desconto"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "descontos" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 0], ["created_at", "2015-12-10 18:34:08.975869"], ["updated_at", "2015-12-10 18:34:08.975869"]]
+  [1m[35m (189.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/descontos/2
+Completed 302 Found in 199ms (ActiveRecord: 190.0ms)
+
+
+Started GET "/descontos/2" for 127.0.0.1 at 2015-12-10 16:34:09 -0200
+Processing by DescontosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDesconto Load (0.3ms)[0m  [1mSELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 0]]
+  Rendered descontos/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 191ms (Views: 188.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:34:11 -0200
+Processing by DescontosController#index as HTML
+  [1m[36mDesconto Load (0.4ms)[0m  [1mSELECT "descontos".* FROM "descontos"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered descontos/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 138ms (Views: 136.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/descontos/1" for 127.0.0.1 at 2015-12-10 16:34:15 -0200
+Processing by DescontosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rjw1yLwPoQZfCwQsuA7jLtlpHYcJ6/mzrIpE10pOvNr5HJp834ht011NeZAwt61AHOfxhMUlA1ffEaP2bAXeMw==", "id"=>"1"}
+  [1m[35mDesconto Load (0.3ms)[0m  SELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "descontos" WHERE "descontos"."id" = ?  [["id", 1]]
+  [1m[36m (156.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/descontos
+Completed 302 Found in 163ms (ActiveRecord: 157.2ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:34:16 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.5ms)[0m  SELECT "descontos".* FROM "descontos"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered descontos/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 208ms (Views: 204.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/descontos/2" for 127.0.0.1 at 2015-12-10 16:34:18 -0200
+Processing by DescontosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cHwsbezILvvVsdHppnajDGJ87Num1ByP7GhJ2TM9A/cnXIPZj0/iLtf3rFUuz+1ip/IA2Goa5muf8674FXZhHg==", "id"=>"2"}
+  [1m[35mDesconto Load (0.3ms)[0m  SELECT  "descontos".* FROM "descontos" WHERE "descontos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "descontos" WHERE "descontos"."id" = ?  [["id", 2]]
+  [1m[36m (122.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/descontos
+Completed 302 Found in 131ms (ActiveRecord: 123.5ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 16:34:19 -0200
+Processing by DescontosController#index as HTML
+  [1m[35mDesconto Load (0.4ms)[0m  SELECT "descontos".* FROM "descontos"
+  Rendered descontos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 215ms (Views: 213.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/descontos" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+Processing by DescontosController#index as HTML
+  [1m[36mDesconto Load (1.0ms)[0m  [1mSELECT "descontos".* FROM "descontos"[0m
+  Rendered descontos/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 213ms (Views: 209.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/descontos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/estabelecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/eventos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/scaffolds.self-ee25ba116702a67dfa6b658bc55bf6abbc0ea71d72dafbc277829b959de77d38.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/descontos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/estabelecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/eventos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/geolocalizacaos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-10 17:20:12 -0200

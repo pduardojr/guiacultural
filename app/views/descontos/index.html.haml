@@ -1,0 +1,23 @@
+%h1 Listing descontos
+
+%table
+  %thead
+    %tr
+      %th Porcentagem
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @descontos.each do |desconto|
+      %tr
+        %td= desconto.porcentagem
+        %td= desconto.user
+        %td= link_to 'Show', desconto
+        %td= link_to 'Edit', edit_desconto_path(desconto)
+        %td= link_to 'Destroy', desconto, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Desconto', new_desconto_path

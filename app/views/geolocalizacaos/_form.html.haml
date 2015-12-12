@@ -1,0 +1,10 @@
+= simple_form_for(@geolocalizacao) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :latitude
+    = f.input :longitude
+    = f.association :user
+
+  .form-actions
+    = f.button :submit

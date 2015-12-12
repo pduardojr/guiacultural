@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-12-10
+  endereco: MyString
+  preco: 1.5
+  class_etaria: 1.5
+  descricao: MyString
+  coordenada: 1.5
+  estabelecimento_id: 
+
+two:
+  data: 2015-12-10
+  endereco: MyString
+  preco: 1.5
+  class_etaria: 1.5
+  descricao: MyString
+  coordenada: 1.5
+  estabelecimento_id: 
